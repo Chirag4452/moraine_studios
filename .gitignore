@@ -1,0 +1,98 @@
+# ==============================================================================
+# Only include the 'store' web application in Git
+# ==============================================================================
+
+# Ignore all design asset folders, mockups, and UI kits
+/Bezel-iPhone-Duo/
+/Foldable-iPhone-Duo-Opening-Up-Free-PSD-Mockup/
+/Hand-Held-iPhone-Duo-Foldable-Smartphone-Free-PSD-Mockup/
+/apple-ios-27-ui-kit_assets_2026-09-22_v27/
+/iPhone Duo Wallpapers/
+/platsupply-clone/
+*.psd
+
+# ==============================================================================
+# Operating System Files
+# ==============================================================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.fseventsd/
+.DropDMGBackground/
+
+# ==============================================================================
+# IDE & Editor Configurations
+# ==============================================================================
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.sublime-workspace
+*.sublime-project
+*.sw[op]
+*~
+
+# ==============================================================================
+# Node.js & Next.js ('store' app)
+# ==============================================================================
+node_modules/
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# Next.js build output
+.next/
+out/
+
+# Production builds
+build/
+dist/
+
+# Debug and process logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+*.log
+
+# Environment variables & secrets
+.env
+.env*.local
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Vercel & Turborepo
+.vercel
+.turbo
+
+# TypeScript
+*.tsbuildinfo
+
+# Testing & coverage
+coverage/
+*.lcov
+.nyc_output/
+
+# Python cache & virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
