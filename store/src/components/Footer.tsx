@@ -17,16 +17,6 @@ export function Footer() {
 
   return (
     <footer className="w-full bg-[#1a1a1a] text-neutral-300">
-      {/* Trust Badge */}
-      <div className="py-6 border-b border-white/[0.08]">
-        <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-10 flex items-center justify-center gap-2">
-          <span className="w-2.5 h-2.5 rounded-full bg-green-500 inline-block" />
-          <span className="text-[13px] text-neutral-400">
-            Trusted by 100,000+ customers.
-          </span>
-        </div>
-      </div>
-
       {/* Main Footer Content */}
       <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-10 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">

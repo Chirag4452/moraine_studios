@@ -46,6 +46,7 @@ export default function CollectionPage({ params, searchParams }: CollectionPageP
         break;
       case "featured":
       default:
+        list.sort((a, b) => Number(!!b.isFeatured) - Number(!!a.isFeatured));
         break;
     }
 

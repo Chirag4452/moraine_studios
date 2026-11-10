@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { useCart } from "@/context/CartContext";
 import { useCurrency } from "@/context/CurrencyContext";
-import { WallpaperSilhouette } from "@/components/WallpaperSilhouette";
+import { ProductVisual } from "@/components/ProductVisual";
 import { Plus, Minus, Trash2, ArrowRight, ShieldCheck, ShoppingBag } from "lucide-react";
 
 export default function CartPage() {
@@ -43,10 +43,7 @@ export default function CartPage() {
               {items.map((item) => (
                 <div key={item.product.id} className="py-6 flex gap-4">
                   <div className="w-24 h-16 rounded-md overflow-hidden bg-neutral-100 shrink-0 border border-black/[0.06]">
-                    <WallpaperSilhouette
-                      colors={item.product.imageColors}
-                      gradientStyle={item.product.gradientStyle}
-                    />
+                    <ProductVisual product={item.product} sizes="96px" />
                   </div>
 
                   <div className="flex-1 flex flex-col justify-between">

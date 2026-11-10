@@ -3,7 +3,7 @@
 import React, { useEffect } from "react";
 import { useCart } from "@/context/CartContext";
 import { useCurrency } from "@/context/CurrencyContext";
-import { WallpaperSilhouette } from "./WallpaperSilhouette";
+import { ProductVisual } from "./ProductVisual";
 import { X, Plus, Minus, Trash2, ArrowRight } from "lucide-react";
 
 export function CartDrawer() {
@@ -90,10 +90,7 @@ export function CartDrawer() {
                     >
                       {/* Thumbnail */}
                       <div className="w-20 h-20 overflow-hidden bg-[#f0f0f0] shrink-0">
-                        <WallpaperSilhouette
-                          colors={item.product.imageColors}
-                          gradientStyle={item.product.gradientStyle}
-                        />
+                        <ProductVisual product={item.product} sizes="80px" />
                       </div>
 
                       {/* Details */}

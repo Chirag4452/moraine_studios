@@ -1,0 +1,96 @@
+MORAINE STUDIO
+USER EXPERIENCE CHANGE RECORD
+Feature: Product gallery gestures and expanded preview navigation
+Date: 9 November 2026
+Status: Implemented locally; browser interaction validation pending
+
+1. PURPOSE AND SCOPE
+Enable direct left/right exploration in the product-page gallery and continuous
+vertical browsing in the expanded preview. Maintain product context, selected
+image feedback, keyboard access, and the existing zoom/close controls.
+
+2. INTERACTION DESIGN
+Product-page gallery:
+- Native horizontal scrolling with mandatory alignment to each preview.
+- Touch swiping and horizontal trackpad scrolling; mouse dragging is supported.
+- A small “SWIPE” label with a single right arrow also acts as a next-image button.
+- The visual label is 10px; its interactive target is at least 44px high.
+- A movement threshold of 8px suppresses enlargement after a drag gesture.
+- Thumbnail selection and left/right keyboard commands remain available.
+- The selected thumbnail is kept within its own scrollable row.
+- Adjacent previews are requested ahead of navigation; previously loaded
+  previews remain mounted. Unloaded images show a loading state.
+
+Expanded preview:
+- Images are presented in a continuous vertical sequence with stable geometry.
+- Previous/next overlay arrows have been removed.
+- A restrained “SCROLL TO EXPLORE” cue communicates the navigation model.
+- The header, close control and thumbnail rail remain accessible during browsing.
+- The active caption and thumbnail track the image nearest the viewport center.
+- Thumbnail clicks move to the corresponding image within the preview container.
+- The previously selected image is brought into view when the dialog opens.
+- Zoom increases image dimensions to 180%; native scrolling supports inspection.
+
+3. MOTION, EASING AND COMFORT
+Direct touch/trackpad movement follows native browser scrolling and momentum.
+No fixed waiting period is inserted before a selected image is displayed.
+Programmatic thumbnail navigation uses browser-native smooth scrolling; its
+exact timing and easing depend on browser/platform and are not fixed by the app.
+Reduced-motion preferences replace programmatic smooth travel with immediate
+positioning. The hint uses a 150ms color transition, disabled for reduced motion.
+No bouncing hint, automatic slide advance, or forced vertical scroll snapping is
+used. Continuous vertical scrolling lets the visitor control reading speed.
+Zoom changes immediately to avoid a large animated scaling effect.
+
+4. EXPECTED EXPERIENCE IMPACT — QUALITATIVE HYPOTHESES
+Discoverability: The hint should make horizontal navigation easier to discover.
+Its small presentation reduces competition with the wallpaper; some visitors
+may still rely on thumbnails. This requires observation, not assumption.
+Effort: Repeated gestures and natural scrolling can reduce repeated button
+clicks when browsing several designs. Thumbnails remain useful for direct jumps.
+Comfort: Native momentum and stable image boxes should reduce discontinuity.
+Disabling motion effects for reduced-motion users improves control.
+Click behavior: Gallery arrow clicks may decline because users can swipe.
+That decline alone would not indicate worse engagement. Preview reach, zoom
+usage and product exploration are more useful alongside click counts.
+Purchase impact: No conversion improvement is asserted. Purchase intent also
+depends on artwork, pricing, download quality, and checkout reliability.
+Performance: A vertical sequence can request more image data than a single-image
+viewer. Nearby images load eagerly; distant full-size previews load lazily.
+Thumbnail requests are small. Actual latency and memory usage require runtime
+measurement on representative devices and network conditions.
+
+5. ACCESSIBILITY AND INPUT SAFEGUARDS
+Native modal dialog behavior constrains focus to the expanded viewer.
+Escape closes it and focus returns to the gallery enlargement control.
+Selected thumbnails expose their state through aria-pressed.
+Controls have descriptive accessible names and visible keyboard focus.
+The scroll region is keyboard focusable. Standard vertical scrolling remains
+available, and left/right keys provide direct image navigation.
+The single direction arrow is not the only means of reaching a previous image.
+
+6. MEASUREMENT PLAN — NOT YET INSTRUMENTED
+Record gallery navigation method (swipe, drag, hint, thumbnail, keyboard),
+expanded-view opens/closes, maximum preview index reached, zoom use, and
+add-to-cart events. Use anonymous aggregate measurements without raw touch paths.
+Compare the share of sessions viewing at least two previews, time to first
+navigation, loading failures, and accidental opens immediately after a swipe.
+Evaluate add-to-cart rate with traffic volume and uncertainty in view. Avoid
+assigning a percentage uplift without a baseline and sufficient observations.
+
+7. ACCEPTANCE REVIEW
+Manual review requested on desktop Safari/Chrome and mobile Safari/Chrome:
+- Horizontal swipe changes the page image while vertical gestures scroll the page.
+- Mouse drag does not accidentally open the enlarged viewer.
+- A normal click or keyboard activation still opens the viewer.
+- Expanded previews scroll vertically without overlay navigation arrows.
+- Active captions/thumbnails follow scrolling and thumbnail jumps work.
+- Opening a later image, resizing, zooming and closing preserve useful context.
+- Keyboard focus, Escape, and reduced-motion behavior remain functional.
+No browser automation is performed without the user's request.
+
+8. ONGOING DOCUMENTATION STANDARD
+For subsequent UX feature changes, create or update a dated text record here.
+Include scope, exact interactions, motion/easing, accessibility, expected impact,
+tradeoffs, measurement suggestions, and validation status. Clearly distinguish
+observations from hypotheses. Never invent click-through or conversion gains.

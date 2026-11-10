@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useSearch } from "@/context/SearchContext";
 import { useCurrency } from "@/context/CurrencyContext";
 import { PRODUCTS } from "@/data/products";
-import { WallpaperSilhouette } from "./WallpaperSilhouette";
+import { ProductVisual } from "./ProductVisual";
 import { Search, X, ArrowRight } from "lucide-react";
 
 export function SearchModal() {
@@ -97,10 +97,7 @@ export function SearchModal() {
                   className="flex items-center gap-4 p-3 hover:bg-neutral-50 rounded-lg transition-colors group"
                 >
                   <div className="w-14 h-14 overflow-hidden bg-[#f0f0f0] shrink-0">
-                    <WallpaperSilhouette
-                      colors={product.imageColors}
-                      gradientStyle={product.gradientStyle}
-                    />
+                    <ProductVisual product={product} sizes="56px" />
                   </div>
 
                   <div className="flex-1 min-w-0">

@@ -6,6 +6,13 @@ export interface Product {
   compareAtPrice?: number;
   isBestSeller?: boolean;
   isSale?: boolean;
+  isFeatured?: boolean;
+  gallery?: { src: string; alt: string; label?: string; view?: string }[];
+  downloadSummary?: { label: string; value: string }[];
+  previewNote?: string;
+  creator?: string;
+  description?: string[];
+  included?: string[];
   imageColors: string[]; // Colors used for the placeholder product image
   gradientStyle: "linear" | "radial" | "conic" | "mesh" | "minimal-grid" | "layers" | "circles" | "stacks";
 }
@@ -258,8 +265,37 @@ export const PRODUCTS: Product[] = [
   {
     id: "ps-31",
     slug: "mountain-peaks-pack",
-    title: "Mountain Peaks Pack",
+    title: "Mountain Landscapes for iPhone Duo",
+    downloadSummary: [
+      { label: "Files", value: "4 JPEG wallpapers + setup guide" },
+      { label: "Resolution", value: "552 × 388 to 853 × 600 px; varies by wallpaper" },
+      { label: "Layout", value: "One landscape image per design for open and closed iPhone Duo displays" },
+    ],
+    previewNote: "Phone frames, clock, and controls are shown for illustration. Your download contains the wallpaper artwork and setup guide.",
     price: 900,
+    isFeatured: true,
+    creator: "Moraine Studio",
+    gallery: [
+      { src: "/wallpapers/duo-landscapes/fuji-at-dusk-night-sky-closed.webp", alt: "Fuji at Dusk lock-screen wallpaper on a closed Night Sky iPhone Duo", label: "Fuji at Dusk · Closed", view: "Closed" },
+      { src: "/wallpapers/duo-landscapes/fuji-at-dusk-night-sky-open.webp", alt: "Fuji at Dusk lock-screen wallpaper on a fully open Night Sky iPhone Duo", label: "Fuji at Dusk · Fully open", view: "Fully open" },
+      { src: "/wallpapers/duo-landscapes/cloud-peaks-handheld.webp", alt: "Cloud Peaks wallpaper on a closed iPhone Duo held in a hand", label: "Cloud Peaks · Closed", view: "Closed" },
+      { src: "/wallpapers/duo-landscapes/cloud-peaks-folded.webp", alt: "Cloud Peaks wallpaper across a partially open iPhone Duo", label: "Cloud Peaks · Partially open", view: "Partially open" },
+      { src: "/wallpapers/duo-landscapes/violet-valley-handheld.webp", alt: "Violet Valley wallpaper on a closed iPhone Duo held in a hand", label: "Violet Valley · Closed", view: "Closed" },
+      { src: "/wallpapers/duo-landscapes/violet-valley-folded.webp", alt: "Violet Valley wallpaper across a partially open iPhone Duo", label: "Violet Valley · Partially open", view: "Partially open" },
+      { src: "/wallpapers/duo-landscapes/alpine-meadow-handheld.webp", alt: "Alpine Meadow wallpaper on a closed iPhone Duo held in a hand", label: "Alpine Meadow · Closed", view: "Closed" },
+      { src: "/wallpapers/duo-landscapes/alpine-meadow-folded.webp", alt: "Alpine Meadow wallpaper across a partially open iPhone Duo", label: "Alpine Meadow · Partially open", view: "Partially open" },
+    ],
+    description: [
+      "Four mountain landscapes, from violet valleys and cloud-covered peaks to sunlit meadows and Fuji at dusk.",
+      "Each design is one continuous landscape image with its subject kept visible in a central portrait crop. Save the image to Photos and choose Use as Wallpaper, then adjust the framing to your preference.",
+      "Images are supplied at their original crop resolution. These are not 4K files. Device mockups illustrate the compositions; your wallpaper framing can vary with iOS settings and orientation.",
+    ],
+    included: [
+      "4 landscape JPEG wallpapers",
+      "Violet Valley, Cloud Peaks, Alpine Meadow, and Fuji at Dusk",
+      "One image per design for both display shapes",
+      "Simple wallpaper setup instructions",
+    ],
     imageColors: ["#1b2838", "#2c3e50", "#34495e", "#4a6572"],
     gradientStyle: "layers",
   },

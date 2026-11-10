@@ -1,0 +1,35 @@
+MORAINE STUDIO — USER EXPERIENCE CHANGE RECORD
+Feature: Gallery and expanded-preview focus feedback
+Date: 9 November 2026
+
+PURPOSE
+Remove distracting blue outlines reported after dragging previews and clicking
+Enlarge or zoom controls, while retaining a visible keyboard location indicator.
+
+IMPLEMENTATION
+Replaced explicit blue focus styles with a scoped neutral-gray 2px inset outline.
+The indicator appears following keyboard navigation and clears following pointer
+input. Programmatic dialog autofocus does not enable the indicator by itself.
+Focus is retained for keyboard operation and restoration after closing the dialog.
+Tab, arrow, Home/End and PageUp/PageDown navigation enable keyboard feedback.
+The styles apply only to the gallery and expanded-preview controls.
+Forced-colors mode uses the system Highlight color for visibility.
+
+MOTION AND COMFORT
+Focus changes are immediate. There is no fade, easing or layout movement.
+An inset outline avoids clipping at scroll-container edges. The neutral color
+fits the interface and avoids drawing a blue rectangle around the artwork after
+ordinary pointer interaction.
+
+EXPECTED IMPACT
+Lower visual distraction during inspection is a qualitative expectation.
+Keyboard discoverability remains supported by a visible focus indicator.
+No increase in clicks, engagement or conversion is claimed or measured.
+
+TRADEOFFS AND VALIDATION
+Explicit input tracking adds a small amount of event/state handling. Mouse users
+will not see a focus ring; keyboard users should see it when navigating controls.
+Review pointer click, swipe/drag, modal open/close, Tab navigation, zoom controls,
+focus restoration, and forced-colors presentation on representative browsers.
+Code/build checks are performed locally. Browser interaction verification remains
+pending because browser automation requires the user's explicit request.
