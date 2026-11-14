@@ -1,14 +1,15 @@
 # ==============================================================================
-# Only include the 'store' web application in Git
+# Track the store and approved cloud-rendering inputs
 # ==============================================================================
 
 # Ignore all design asset folders, mockups, and UI kits
-/Bezel-iPhone-Duo/
+/Bezel-iPhone-Duo/*
+!/Bezel-iPhone-Duo/PNG/
+!/Bezel-iPhone-Duo/Apple Design Resources License.rtf
 /Foldable-iPhone-Duo-Opening-Up-Free-PSD-Mockup/
 /Hand-Held-iPhone-Duo-Foldable-Smartphone-Free-PSD-Mockup/
 /apple-ios-27-ui-kit_assets_2026-09-22_v27/
 /iPhone Duo Wallpapers/
-/wallpaper(raw)/
 /wallpaper(processed)/
 /platsupply-clone/
 *.psd
