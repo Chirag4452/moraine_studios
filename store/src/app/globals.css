@@ -70,3 +70,67 @@ body {
     outline-color: Highlight;
   }
 }
+
+/* Desktop collection geometry. Header and collection share the same edge.
+   At 1512px: 1432px content = 5 × 262.4px cards + 4 × 30px gutters.
+   Keep the existing small-screen layout below the desktop breakpoint. */
+@media (min-width: 1024px) {
+  .collection-shell {
+    --collection-gutter: 40px;
+    --collection-gap: 30px;
+    width: 100%;
+    max-width: 2000px;
+    margin-inline: auto;
+    padding-inline: var(--collection-gutter);
+  }
+  .collection-header {
+    height: 68px;
+  }
+  .collection-heading {
+    padding-block: 48px;
+  }
+  .collection-heading h1 {
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -0.025em;
+  }
+  .collection-toolbar {
+    min-height: 48px;
+    padding-block: 8px;
+    border-bottom: 0;
+  }
+  .collection-results {
+    margin-top: 16px;
+    margin-bottom: 72px;
+  }
+  .collection-grid {
+    column-gap: var(--collection-gap);
+    row-gap: 30px;
+  }
+  .collection-grid .product-card {
+    min-width: 0;
+  }
+  .collection-grid .product-card-media {
+    border-radius: 6px;
+  }
+  .collection-grid .product-card-info {
+    padding-top: 8px;
+    padding-bottom: 0;
+    gap: 2px;
+  }
+  .collection-grid .product-card-info > a {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+  }
+  .collection-grid .product-card-bestseller {
+    top: 8px;
+    right: 8px;
+    left: auto;
+    transform: none;
+  }
+  .collection-grid .product-card-bestseller > span {
+    padding: 3px 6px;
+    letter-spacing: 0;
+  }
+}

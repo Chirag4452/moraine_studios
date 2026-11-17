@@ -3,9 +3,11 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { ArrowRight, Check } from "lucide-react";
 
 export function Footer() {
+  const pathname = usePathname();
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
 
@@ -18,7 +20,7 @@ export function Footer() {
   return (
     <footer className="w-full bg-[#1a1a1a] text-neutral-300">
       {/* Main Footer Content */}
-      <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-10 py-12">
+      <div className={`${pathname?.startsWith("/collections/") ? "collection-shell" : ""} max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-10 py-12`}>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Column 1: Newsletter */}
           <div className="flex flex-col gap-3">

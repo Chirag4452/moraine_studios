@@ -55,9 +55,9 @@ export default function CollectionPage({ params, searchParams }: CollectionPageP
 
   return (
     <div className="w-full min-h-screen">
-      <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-10">
+      <div className="collection-shell max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-10">
         {/* Page Title */}
-        <div className="pt-10 pb-6">
+        <div className="collection-heading pt-10 pb-6">
           <h1 className="text-[2rem] sm:text-[2.5rem] font-semibold tracking-normal text-black leading-tight">
             {collectionTitle}
           </h1>
@@ -71,7 +71,7 @@ export default function CollectionPage({ params, searchParams }: CollectionPageP
         />
 
         {/* Product Grid */}
-        <div className="mt-6 mb-16">
+        <div className="collection-results mt-6 mb-16">
           <ProductGrid products={sortedProducts} />
         </div>
       </div>

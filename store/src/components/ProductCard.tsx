@@ -10,27 +10,29 @@ import { useCurrency } from "@/context/CurrencyContext";
 interface ProductCardProps {
   product: Product;
   interactivePreview?: boolean;
+  imageSizes?: string;
+  autoPlayPreview?: boolean;
 }
 
-export function ProductCard({ product, interactivePreview = false }: ProductCardProps) {
+export function ProductCard({ product, interactivePreview = false, imageSizes, autoPlayPreview = false }: ProductCardProps) {
   const { formatPrice } = useCurrency();
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <div
-      className="group flex flex-col w-full text-left"
+      className="product-card group flex flex-col w-full text-left"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Image Area */}
-      <div className={`relative block w-full aspect-square overflow-hidden bg-[#f0f0f0] ${interactivePreview ? "rounded-md" : "rounded-none"}`}>
-        {interactivePreview ? <ProductCardPreview product={product} /> : <Link href={`/products/${product.slug}`} className="block h-full w-full">
-          <ProductVisual product={product} isHovered={isHovered} />
+      <div className={`product-card-media relative block w-full aspect-square overflow-hidden bg-[#f0f0f0] ${interactivePreview ? "rounded-md" : "rounded-none"}`}>
+        {interactivePreview ? <ProductCardPreview product={product} imageSizes={imageSizes} autoPlay={autoPlayPreview} /> : <Link href={`/products/${product.slug}`} className="block h-full w-full">
+          <ProductVisual product={product} isHovered={isHovered} sizes={imageSizes} />
         </Link>}
 
         {/* Badges */}
         {product.isBestSeller && (
-          <div className="pointer-events-none absolute top-3 left-1/2 -translate-x-1/2 z-10">
+          <div className="product-card-bestseller pointer-events-none absolute top-3 left-1/2 -translate-x-1/2 z-10">
             <span className="bg-white text-black text-[10px] font-semibold tracking-[0.06em] uppercase px-3 py-1 rounded-sm shadow-sm">
               BEST SELLER
             </span>
@@ -47,7 +49,7 @@ export function ProductCard({ product, interactivePreview = false }: ProductCard
       </div>
 
       {/* Product Info */}
-      <div className="pt-3 pb-1 flex flex-col gap-0.5">
+      <div className="product-card-info pt-3 pb-1 flex flex-col gap-0.5">
         <Link
           href={`/products/${product.slug}`}
           className="text-[13px] font-normal text-neutral-900 hover:text-neutral-600 transition-colors leading-snug"

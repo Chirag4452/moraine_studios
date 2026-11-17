@@ -29,7 +29,9 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
   const [added, setAdded] = useState(false);
 
   // "You may also like" carousel state
-  const related = PRODUCTS.filter((p) => p.id !== product.id).slice(0, 8);
+  const related = PRODUCTS.filter((p) => p.id !== product.id)
+    .sort((a, b) => Number(!!b.isFeatured) - Number(!!a.isFeatured))
+    .slice(0, 8);
 
   // Sticky bar visibility
   const [showStickyBar, setShowStickyBar] = useState(false);
@@ -160,6 +162,16 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
               </p>
               </>}
             </div>
+
+            {product.designs && <section aria-label="Wallpapers in this collection" className="flex flex-col gap-4 pt-4 border-t border-neutral-200">
+              <h2 className="text-[14px] font-medium text-black">Explore the landscapes</h2>
+              <dl className="space-y-4">
+                {product.designs.map(design => <div key={design.title}>
+                  <dt className="text-[13px] font-medium text-neutral-900">{design.title}</dt>
+                  <dd className="mt-1 text-[13px] leading-relaxed text-neutral-600">{design.description}</dd>
+                </div>)}
+              </dl>
+            </section>}
 
             {/* What you get */}
             <div className="flex flex-col gap-2">

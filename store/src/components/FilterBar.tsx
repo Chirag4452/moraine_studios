@@ -17,7 +17,7 @@ export function FilterBar({
   const [availabilityOpen, setAvailabilityOpen] = useState(false);
 
   return (
-    <div className="w-full flex items-center justify-between py-4 border-b border-neutral-200">
+    <div className="collection-toolbar w-full flex items-center justify-between py-4 border-b border-neutral-200">
       {/* Left: Availability dropdown */}
       <div className="relative">
         <button

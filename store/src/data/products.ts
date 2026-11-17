@@ -13,6 +13,7 @@ export interface Product {
   creator?: string;
   description?: string[];
   included?: string[];
+  designs?: { title: string; description: string }[];
   imageColors: string[]; // Colors used for the placeholder product image
   gradientStyle: "linear" | "radial" | "conic" | "mesh" | "minimal-grid" | "layers" | "circles" | "stacks";
 }
@@ -298,6 +299,296 @@ export const PRODUCTS: Product[] = [
     ],
     imageColors: ["#1b2838", "#2c3e50", "#34495e", "#4a6572"],
     gradientStyle: "layers",
+  },
+  {
+    "id": "ps-36",
+    "slug": "mountain-landscapes-ii-iphone-duo",
+    "title": "Mountain Landscapes II for iPhone Duo",
+    "price": 900,
+    "isFeatured": true,
+    "creator": "Moraine Studio",
+    "gallery": [
+      {
+        "src": "/wallpapers/duo-mountains-ii/aurora-snowfields-closed.webp",
+        "alt": "Aurora Snowfields wallpaper with lock-screen time and controls on a closed Night Sky iPhone Duo",
+        "label": "Aurora Snowfields · Closed",
+        "view": "Closed"
+      },
+      {
+        "src": "/wallpapers/duo-mountains-ii/aurora-snowfields-open.webp",
+        "alt": "Aurora Snowfields wallpaper with lock-screen time and controls on a fully open Night Sky iPhone Duo",
+        "label": "Aurora Snowfields · Fully open",
+        "view": "Fully open"
+      },
+      {
+        "src": "/wallpapers/duo-mountains-ii/fuji-cherry-blossoms-closed.webp",
+        "alt": "Fuji Cherry Blossoms wallpaper with lock-screen time and controls on a closed Star White iPhone Duo",
+        "label": "Fuji Cherry Blossoms · Closed",
+        "view": "Closed"
+      },
+      {
+        "src": "/wallpapers/duo-mountains-ii/fuji-cherry-blossoms-open.webp",
+        "alt": "Fuji Cherry Blossoms wallpaper with lock-screen time and controls on a fully open Star White iPhone Duo",
+        "label": "Fuji Cherry Blossoms · Fully open",
+        "view": "Fully open"
+      },
+      {
+        "src": "/wallpapers/duo-mountains-ii/alpine-rainbow-valley-closed.webp",
+        "alt": "Alpine Rainbow Valley wallpaper with lock-screen time and controls on a closed Star White iPhone Duo",
+        "label": "Alpine Rainbow Valley · Closed",
+        "view": "Closed"
+      },
+      {
+        "src": "/wallpapers/duo-mountains-ii/alpine-rainbow-valley-open.webp",
+        "alt": "Alpine Rainbow Valley wallpaper with lock-screen time and controls on a fully open Star White iPhone Duo",
+        "label": "Alpine Rainbow Valley · Fully open",
+        "view": "Fully open"
+      },
+      {
+        "src": "/wallpapers/duo-mountains-ii/fuji-violet-twilight-closed.webp",
+        "alt": "Fuji Violet Twilight wallpaper with lock-screen time and controls on a closed Night Sky iPhone Duo",
+        "label": "Fuji Violet Twilight · Closed",
+        "view": "Closed"
+      },
+      {
+        "src": "/wallpapers/duo-mountains-ii/fuji-violet-twilight-open.webp",
+        "alt": "Fuji Violet Twilight wallpaper with lock-screen time and controls on a fully open Night Sky iPhone Duo",
+        "label": "Fuji Violet Twilight · Fully open",
+        "view": "Fully open"
+      }
+    ],
+    "downloadSummary": [
+      {
+        "label": "Files",
+        "value": "4 landscape PNG wallpapers"
+      },
+      {
+        "label": "Resolution",
+        "value": "1515 × 1038 px (Aurora); 1494 × 1052 px (other designs)"
+      },
+      {
+        "label": "Layout",
+        "value": "One landscape artwork per design, composed for an open display and a central portrait crop"
+      },
+      {
+        "label": "Previews",
+        "value": "8 device views: closed and fully open for each design"
+      }
+    ],
+    "previewNote": "Device frames, time, and controls appear only in the previews. The wallpaper artwork is supplied without interface elements. Framing may vary with your wallpaper settings.",
+    "description": [
+      "From the hush of a snow-covered night to cherry blossoms beneath Mount Fuji, four mountain scenes follow the light through changing seasons. Cool aurora, soft spring colour, sunlit valley mist, and violet twilight give each screen a different atmosphere.",
+      "Each wallpaper is a continuous landscape composition with its focal mountain kept near the centre. Explore all four designs in closed and fully open views, then adjust the framing to suit your screen.",
+      "These are AI-recreated landscapes, supplied at their generated dimensions. The 2400 × 2400 px device previews are presentation images; the wallpaper files are the landscape PNGs listed above."
+    ],
+    "designs": [
+      {
+        "title": "Aurora Snowfields",
+        "description": "A ribbon of aurora drifts above a quiet, snow-covered ridge. Deep blues and luminous sky bring a little of the stillness of a winter night to your screen."
+      },
+      {
+        "title": "Fuji Cherry Blossoms",
+        "description": "Mount Fuji rises beyond a frame of delicate cherry blossoms. Soft pinks, clear air, and the snow-capped summit capture the gentle colour of spring."
+      },
+      {
+        "title": "Alpine Rainbow Valley",
+        "description": "Sunlight opens through the mist above a green mountain valley, leaving a trace of rainbow in the haze. Layered ridges and woodland give this scene its depth and quiet warmth."
+      },
+      {
+        "title": "Fuji Violet Twilight",
+        "description": "Mount Fuji settles into the violet light of evening. A restrained palette and an open sky let the mountain hold the scene as daylight fades."
+      }
+    ],
+    "included": [
+      "4 landscape PNG wallpaper artworks",
+      "Aurora Snowfields, Fuji Cherry Blossoms, Alpine Rainbow Valley, and Fuji Violet Twilight",
+      "Clean artwork without device frames, clocks, or controls",
+      "One composition per design, with screen framing adjustable during setup"
+    ],
+    "imageColors": [
+      "#19394d",
+      "#977cae",
+      "#b9cfc3",
+      "#edd7dd"
+    ],
+    "gradientStyle": "layers"
+  },
+  {
+    "id": "ps-37",
+    "slug": "acrylic-studies-iphone-duo",
+    "title": "Acrylic Studies for iPhone Duo",
+    "price": 900,
+    "isFeatured": true,
+    "creator": "Moraine Studio",
+    "gallery": [
+      {
+        "src": "/wallpapers/duo-acrylic-studies/electric-sweep-closed.webp",
+        "alt": "Electric Sweep acrylic wallpaper with lock-screen time and controls on a closed Night Sky iPhone Duo",
+        "label": "Electric Sweep \u00b7 Closed",
+        "view": "Closed"
+      },
+      {
+        "src": "/wallpapers/duo-acrylic-studies/electric-sweep-open.webp",
+        "alt": "Electric Sweep acrylic wallpaper with lock-screen time and controls on a fully open Night Sky iPhone Duo",
+        "label": "Electric Sweep \u00b7 Fully open",
+        "view": "Fully open"
+      },
+      {
+        "src": "/wallpapers/duo-acrylic-studies/moss-folds-closed.webp",
+        "alt": "Moss Folds acrylic wallpaper with lock-screen time and controls on a closed Star White iPhone Duo",
+        "label": "Moss Folds \u00b7 Closed",
+        "view": "Closed"
+      },
+      {
+        "src": "/wallpapers/duo-acrylic-studies/moss-folds-open.webp",
+        "alt": "Moss Folds acrylic wallpaper with lock-screen time and controls on a fully open Star White iPhone Duo",
+        "label": "Moss Folds \u00b7 Fully open",
+        "view": "Fully open"
+      },
+      {
+        "src": "/wallpapers/duo-acrylic-studies/orbit-pop-closed.webp",
+        "alt": "Orbit Pop acrylic wallpaper with lock-screen time and controls on a closed Night Sky iPhone Duo",
+        "label": "Orbit Pop \u00b7 Closed",
+        "view": "Closed"
+      },
+      {
+        "src": "/wallpapers/duo-acrylic-studies/orbit-pop-open.webp",
+        "alt": "Orbit Pop acrylic wallpaper with lock-screen time and controls on a fully open Night Sky iPhone Duo",
+        "label": "Orbit Pop \u00b7 Fully open",
+        "view": "Fully open"
+      },
+      {
+        "src": "/wallpapers/duo-acrylic-studies/woven-horizons-closed.webp",
+        "alt": "Woven Horizons acrylic wallpaper with lock-screen time and controls on a closed Night Sky iPhone Duo",
+        "label": "Woven Horizons \u00b7 Closed",
+        "view": "Closed"
+      },
+      {
+        "src": "/wallpapers/duo-acrylic-studies/woven-horizons-open.webp",
+        "alt": "Woven Horizons acrylic wallpaper with lock-screen time and controls on a fully open Night Sky iPhone Duo",
+        "label": "Woven Horizons \u00b7 Fully open",
+        "view": "Fully open"
+      },
+      {
+        "src": "/wallpapers/duo-acrylic-studies/meadow-atlas-closed.webp",
+        "alt": "Meadow Atlas acrylic wallpaper with lock-screen time and controls on a closed Star White iPhone Duo",
+        "label": "Meadow Atlas \u00b7 Closed",
+        "view": "Closed"
+      },
+      {
+        "src": "/wallpapers/duo-acrylic-studies/meadow-atlas-open.webp",
+        "alt": "Meadow Atlas acrylic wallpaper with lock-screen time and controls on a fully open Star White iPhone Duo",
+        "label": "Meadow Atlas \u00b7 Fully open",
+        "view": "Fully open"
+      },
+      {
+        "src": "/wallpapers/duo-acrylic-studies/saffron-orchard-closed.webp",
+        "alt": "Saffron Orchard acrylic wallpaper with lock-screen time and controls on a closed Night Sky iPhone Duo",
+        "label": "Saffron Orchard \u00b7 Closed",
+        "view": "Closed"
+      },
+      {
+        "src": "/wallpapers/duo-acrylic-studies/saffron-orchard-open.webp",
+        "alt": "Saffron Orchard acrylic wallpaper with lock-screen time and controls on a fully open Night Sky iPhone Duo",
+        "label": "Saffron Orchard \u00b7 Fully open",
+        "view": "Fully open"
+      },
+      {
+        "src": "/wallpapers/duo-acrylic-studies/quiet-eddies-closed.webp",
+        "alt": "Quiet Eddies acrylic wallpaper with lock-screen time and controls on a closed Star White iPhone Duo",
+        "label": "Quiet Eddies \u00b7 Closed",
+        "view": "Closed"
+      },
+      {
+        "src": "/wallpapers/duo-acrylic-studies/quiet-eddies-open.webp",
+        "alt": "Quiet Eddies acrylic wallpaper with lock-screen time and controls on a fully open Star White iPhone Duo",
+        "label": "Quiet Eddies \u00b7 Fully open",
+        "view": "Fully open"
+      },
+      {
+        "src": "/wallpapers/duo-acrylic-studies/tidal-reverie-closed.webp",
+        "alt": "Tidal Reverie acrylic wallpaper with lock-screen time and controls on a closed Star White iPhone Duo",
+        "label": "Tidal Reverie \u00b7 Closed",
+        "view": "Closed"
+      },
+      {
+        "src": "/wallpapers/duo-acrylic-studies/tidal-reverie-open.webp",
+        "alt": "Tidal Reverie acrylic wallpaper with lock-screen time and controls on a fully open Star White iPhone Duo",
+        "label": "Tidal Reverie \u00b7 Fully open",
+        "view": "Fully open"
+      }
+    ],
+    "downloadSummary": [
+      {
+        "label": "Files",
+        "value": "8 landscape PNG wallpaper artworks"
+      },
+      {
+        "label": "Resolution",
+        "value": "1493\u20131496 \u00d7 1051\u20131054 px; varies by design"
+      },
+      {
+        "label": "Layout",
+        "value": "One continuous landscape per design, composed for open and closed displays"
+      },
+      {
+        "label": "Previews",
+        "value": "16 device views, with four designs paired with each phone finish"
+      }
+    ],
+    "previewNote": "Phone frames, time, and controls appear only in the previews. Artwork framing may vary with your wallpaper settings.",
+    "description": [
+      "Eight acrylic studies move between bold colour and quieter places: electric brushwork, woven stripes, moss-green ridges, small painted fields, and a sunlit inlet. Each has its own rhythm, from the energy of overlapping arcs to the stillness of three simple green planes.",
+      "The centre of each composition holds a complete scene on the closed display. Open the phone and the painting continues into broader fields, longer lines, and sweeping colour. Four designs are shown on Night Sky and four on the white finish.",
+      "These AI-created artworks are presented at their current generated dimensions, around 1.5K wide. Each design is supplied as one landscape PNG. The larger device previews illustrate the layout; they do not add detail to the artwork."
+    ],
+    "designs": [
+      {
+        "title": "Electric Sweep",
+        "description": "A current of cyan and coral cuts through midnight blue, with a fine flash of yellow along its edge. Raised brush marks turn this sweep of colour into something you can almost feel."
+      },
+      {
+        "title": "Moss Folds",
+        "description": "Three broad planes of sage, moss, and forest green settle beneath a blue sky. Long, quiet ridges give the closed screen a simple rhythm and open into a wider painted landscape."
+      },
+      {
+        "title": "Orbit Pop",
+        "description": "Tangerine, fuchsia, and turquoise arcs loop across a deep plum ground. Their overlapping brushwork holds a lively composition at the centre, with more colour revealed as the screen opens."
+      },
+      {
+        "title": "Woven Horizons",
+        "description": "Ochre, rust, cream, and smoky blue meet in bands of softly worn paint. A central weave of small rectangles interrupts the horizon, bringing warmth and a measured rhythm to the darker palette."
+      },
+      {
+        "title": "Meadow Atlas",
+        "description": "A peach-coloured path winds through combed green fields towards a cluster of pale cottages. Olive slopes, rust-tipped trees, and tiny flowers make a quiet countryside out of painted lines."
+      },
+      {
+        "title": "Saffron Orchard",
+        "description": "Three golden trees stand where saffron fields meet a cobalt sky. Vermilion hills and scattered violet flowers give this small painted world its bright, late-summer warmth."
+      },
+      {
+        "title": "Quiet Eddies",
+        "description": "Sage, peach, ivory, and blue-grey turn in slow, combed curves, touched with butter yellow. Fine ridges of acrylic paint give the soft colours movement without losing their calm."
+      },
+      {
+        "title": "Tidal Reverie",
+        "description": "An ivory sun hangs above a wind-shaped pine and a still teal inlet. Broad strokes of seafoam and cream carry its reflection towards the shore, catching the light in thick layers of paint."
+      }
+    ],
+    "included": [
+      "8 landscape PNG wallpaper artworks",
+      "Electric Sweep, Moss Folds, Orbit Pop, and Woven Horizons",
+      "Meadow Atlas, Saffron Orchard, Quiet Eddies, and Tidal Reverie",
+      "Clean artwork with one composition per design for both screen shapes"
+    ],
+    "imageColors": [
+      "#142c48",
+      "#66833f",
+      "#e8b987",
+      "#acc3b5"
+    ],
+    "gradientStyle": "layers"
   },
   {
     id: "ps-32",

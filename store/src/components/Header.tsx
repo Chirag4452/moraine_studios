@@ -45,7 +45,7 @@ export function Header() {
   return (
     <>
       <header className="sticky top-0 z-40 w-full bg-white border-b border-neutral-200">
-        <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-10 h-[60px] flex items-center justify-between">
+        <div className={`${pathname?.startsWith("/collections/") ? "collection-shell collection-header" : ""} max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-10 h-[60px] flex items-center justify-between`}>
           {/* Left: Logo + Nav */}
           <div className="flex items-center gap-8">
             {/* Mobile menu toggle */}
