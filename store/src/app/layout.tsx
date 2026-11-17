@@ -7,6 +7,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CartDrawer } from "@/components/CartDrawer";
 import { SearchModal } from "@/components/SearchModal";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: "Wallpapers – Moraine Studio",
@@ -59,6 +60,7 @@ export default function RootLayout({
             </SearchProvider>
           </CartProvider>
         </CurrencyProvider>
+        <SpeedInsights />
       </body>
     </html>
   );
