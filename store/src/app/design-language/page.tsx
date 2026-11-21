@@ -8,17 +8,9 @@ import { PRODUCTS } from "@/data/products";
 import { 
   ArrowRight, 
   Check, 
-  Copy, 
-  Layers, 
   Monitor, 
-  Palette, 
-  Sparkles, 
   Sliders, 
-  Maximize2, 
-  Smartphone,
   Eye,
-  Type,
-  Grid,
   ShieldCheck,
   Search,
   ShoppingBag
