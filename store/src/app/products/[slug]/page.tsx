@@ -74,6 +74,8 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
               {product.title}
             </h1>
 
+            {product.summary && <p className="text-base leading-relaxed text-neutral-600">{product.summary}</p>}
+
             {/* Price */}
             <div className="flex items-center gap-3">
               {product.isSale && product.compareAtPrice ? (
@@ -164,7 +166,7 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
             </div>
 
             {product.designs && <section aria-label="Wallpapers in this collection" className="flex flex-col gap-4 pt-4 border-t border-neutral-200">
-              <h2 className="text-[14px] font-medium text-black">Explore the landscapes</h2>
+              <h2 className="text-[14px] font-medium text-black">{product.designsHeading ?? "Explore the landscapes"}</h2>
               <dl className="space-y-4">
                 {product.designs.map(design => <div key={design.title}>
                   <dt className="text-[13px] font-medium text-neutral-900">{design.title}</dt>

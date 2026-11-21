@@ -156,7 +156,7 @@ def main():
         scene,layer,mask,origin,extras=template(path,pose=='folded')
         for spec in specs:
             slug=spec['slug']; src=PROCESSED/slug
-            art=Image.open(src/('mockup-inner.jpg' if pose=='folded' else 'mockup-outer.jpg'))
+            art=Image.open(src/'master.jpg')
             result=scene.copy()
             place(result,map_screen(art,mask,pose=='folded'),layer,origin)
             for extra,image in extras:place(result,image,extra,origin)

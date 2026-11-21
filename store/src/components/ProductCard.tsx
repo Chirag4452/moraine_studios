@@ -57,6 +57,8 @@ export function ProductCard({ product, interactivePreview = false, imageSizes, a
           {product.title}
         </Link>
 
+        {product.summary && <p className="mt-1 text-sm leading-relaxed text-neutral-600">{product.summary}</p>}
+
         <div className="flex items-center gap-2">
           {product.isSale && product.compareAtPrice ? (
             <>

@@ -57,3 +57,59 @@ The PSD renderer now fits convex screen boundaries separately per leaf to
 remove ragged black mask artifacts. 4096px exports improve hardware edges, but
 cannot recover missing detail from the small wallpaper sources. Use larger
 original wallpaper files for sharper artwork; do not market these as 4K wallpapers.
+
+## Portable wallpaper renderer
+
+Requires Python 3.9+ and Node.js 20+. One-time setup from the repository root:
+
+```sh
+python3 -m venv .venv-render
+.venv-render/bin/pip install -r store/scripts/requirements-render.txt
+npm ci --prefix store
+```
+
+Prepare one approved high-quality master per design in
+`wallpaper(processed)/<slug>/master.jpg` (PNG or WebP also accepted).
+AI recreation/enhancement is a preparation step governed by the root AGENTS.md;
+the renderer itself performs deterministic compositing. Preserve master composition
+and dimensions, and keep UI out of the artwork. The legacy preparation helper is
+an importer, not an AI enhancement pipeline.
+
+```sh
+.venv-render/bin/python store/scripts/render_wallpaper.py \
+  --master 'wallpaper(processed)/mount-fuji-sunrise' \
+  --name 'Mount Fuji Sunrise' --finish night-sky
+```
+
+A master file path is also accepted. `--input` remains an alias for `--master`,
+but raw input is rejected to prevent bypassing the prepared master workflow.
+Use `--finish star-white` for the light frame.
+
+Each run creates a fresh folder under `wallpaper(processed)/reviews/` and saves
+only `closed.webp` and `open.webp` at 2400px. `--output PATH` chooses a new output
+folder; existing folders are refused. The master is read only, never re-exported.
+Each device screen receives an independent temporary cover crop of that master,
+with no stretching. `--focus-x` and `--focus-y` position both screen crops from
+0 (left/top) to 1 (right/bottom), default 0.5. These positions control placement
+within the excess artwork; they are not subject coordinates. Device fitting is
+an illustrative composition, not verified system wallpaper behavior.
+
+Optional flags:
+
+- `--review`: add `review.jpg` and `draft.json` with master dimensions, screen crop
+  boxes and draft status.
+- `--keep-sources`: render at 4096px and retain PNGs, editable self-contained SVGs
+  and masks in `sources/`, alongside the 2400px WebPs.
+- `--depth-mask mask.png`: grayscale mask matching the EXIF-oriented master,
+  white for foreground that hides the clock, black for visible clock. It follows
+  the corresponding device crop. Without it, the clock is fully visible.
+
+Clock (9:41), date (Wed Apr 1), network ring, flashlight, camera and home indicator
+use the approved vector overlay. The frame preserves the lens; no crease is added.
+Apple frame PNGs, committed UI vectors and installed dependencies are required.
+No clipboard image, simulator, Quick Look, PSD or browser is required.
+
+Working crops and intermediates are removed before the completed job is promoted
+from staging. The script does not edit listings, upload, commit or publish.
+Review the composition on the laptop before publishing. Export size does not
+increase native source detail. Cloud jobs must retain/export their output folder.

@@ -7,7 +7,6 @@ import {
   DEFAULT_CURRENCY,
   formatCurrencyPrice,
   findCurrencyByCountryCode,
-  findCurrencyByCode,
 } from "@/data/currencies";
 
 interface CurrencyContextType {

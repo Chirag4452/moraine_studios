@@ -11,6 +11,8 @@ export interface Product {
   downloadSummary?: { label: string; value: string }[];
   previewNote?: string;
   creator?: string;
+  summary?: string;
+  designsHeading?: string;
   description?: string[];
   included?: string[];
   designs?: { title: string; description: string }[];
@@ -264,41 +266,144 @@ export const PRODUCTS: Product[] = [
     gradientStyle: "mesh",
   },
   {
-    id: "ps-31",
-    slug: "mountain-peaks-pack",
-    title: "Mountain Landscapes for iPhone Duo",
-    downloadSummary: [
-      { label: "Files", value: "4 JPEG wallpapers + setup guide" },
-      { label: "Resolution", value: "552 × 388 to 853 × 600 px; varies by wallpaper" },
-      { label: "Layout", value: "One landscape image per design for open and closed iPhone Duo displays" },
+    "id": "ps-31",
+    "slug": "mountain-peaks-pack",
+    "title": "Mountain Landscapes for iPhone Duo",
+    "price": 900,
+    "isFeatured": true,
+    "creator": "Moraine Studio",
+    "summary": "Six mountain studies in red alpenglow, violet dusk, and starlight.",
+    "gallery": [
+      {
+        "src": "/wallpapers/duo-landscapes/vermilion-ridge-closed.webp",
+        "alt": "Vermilion Ridge wallpaper on a closed Night Sky iPhone Duo",
+        "label": "Vermilion Ridge · Closed",
+        "view": "Closed"
+      },
+      {
+        "src": "/wallpapers/duo-landscapes/vermilion-ridge-open.webp",
+        "alt": "Vermilion Ridge wallpaper on a fully open Night Sky iPhone Duo",
+        "label": "Vermilion Ridge · Fully open",
+        "view": "Fully open"
+      },
+      {
+        "src": "/wallpapers/duo-landscapes/last-light-closed.webp",
+        "alt": "Last Light wallpaper on a closed Night Sky iPhone Duo",
+        "label": "Last Light · Closed",
+        "view": "Closed"
+      },
+      {
+        "src": "/wallpapers/duo-landscapes/last-light-open.webp",
+        "alt": "Last Light wallpaper on a fully open Night Sky iPhone Duo",
+        "label": "Last Light · Fully open",
+        "view": "Fully open"
+      },
+      {
+        "src": "/wallpapers/duo-landscapes/violet-hour-closed.webp",
+        "alt": "Violet Hour wallpaper on a closed Night Sky iPhone Duo",
+        "label": "Violet Hour · Closed",
+        "view": "Closed"
+      },
+      {
+        "src": "/wallpapers/duo-landscapes/violet-hour-open.webp",
+        "alt": "Violet Hour wallpaper on a fully open Night Sky iPhone Duo",
+        "label": "Violet Hour · Fully open",
+        "view": "Fully open"
+      },
+      {
+        "src": "/wallpapers/duo-landscapes/rose-cirrus-closed.webp",
+        "alt": "Rose Cirrus wallpaper on a closed Star White iPhone Duo",
+        "label": "Rose Cirrus · Closed",
+        "view": "Closed"
+      },
+      {
+        "src": "/wallpapers/duo-landscapes/rose-cirrus-open.webp",
+        "alt": "Rose Cirrus wallpaper on a fully open Star White iPhone Duo",
+        "label": "Rose Cirrus · Fully open",
+        "view": "Fully open"
+      },
+      {
+        "src": "/wallpapers/duo-landscapes/starlit-basin-closed.webp",
+        "alt": "Starlit Basin wallpaper on a closed Star White iPhone Duo",
+        "label": "Starlit Basin · Closed",
+        "view": "Closed"
+      },
+      {
+        "src": "/wallpapers/duo-landscapes/starlit-basin-open.webp",
+        "alt": "Starlit Basin wallpaper on a fully open Star White iPhone Duo",
+        "label": "Starlit Basin · Fully open",
+        "view": "Fully open"
+      },
+      {
+        "src": "/wallpapers/duo-landscapes/copper-monolith-closed.webp",
+        "alt": "Copper Monolith wallpaper on a closed Star White iPhone Duo",
+        "label": "Copper Monolith · Closed",
+        "view": "Closed"
+      },
+      {
+        "src": "/wallpapers/duo-landscapes/copper-monolith-open.webp",
+        "alt": "Copper Monolith wallpaper on a fully open Star White iPhone Duo",
+        "label": "Copper Monolith · Fully open",
+        "view": "Fully open"
+      }
     ],
-    previewNote: "Phone frames, clock, and controls are shown for illustration. Your download contains the wallpaper artwork and setup guide.",
-    price: 900,
-    isFeatured: true,
-    creator: "Moraine Studio",
-    gallery: [
-      { src: "/wallpapers/duo-landscapes/fuji-at-dusk-night-sky-closed.webp", alt: "Fuji at Dusk lock-screen wallpaper on a closed Night Sky iPhone Duo", label: "Fuji at Dusk · Closed", view: "Closed" },
-      { src: "/wallpapers/duo-landscapes/fuji-at-dusk-night-sky-open.webp", alt: "Fuji at Dusk lock-screen wallpaper on a fully open Night Sky iPhone Duo", label: "Fuji at Dusk · Fully open", view: "Fully open" },
-      { src: "/wallpapers/duo-landscapes/cloud-peaks-handheld.webp", alt: "Cloud Peaks wallpaper on a closed iPhone Duo held in a hand", label: "Cloud Peaks · Closed", view: "Closed" },
-      { src: "/wallpapers/duo-landscapes/cloud-peaks-folded.webp", alt: "Cloud Peaks wallpaper across a partially open iPhone Duo", label: "Cloud Peaks · Partially open", view: "Partially open" },
-      { src: "/wallpapers/duo-landscapes/violet-valley-handheld.webp", alt: "Violet Valley wallpaper on a closed iPhone Duo held in a hand", label: "Violet Valley · Closed", view: "Closed" },
-      { src: "/wallpapers/duo-landscapes/violet-valley-folded.webp", alt: "Violet Valley wallpaper across a partially open iPhone Duo", label: "Violet Valley · Partially open", view: "Partially open" },
-      { src: "/wallpapers/duo-landscapes/alpine-meadow-handheld.webp", alt: "Alpine Meadow wallpaper on a closed iPhone Duo held in a hand", label: "Alpine Meadow · Closed", view: "Closed" },
-      { src: "/wallpapers/duo-landscapes/alpine-meadow-folded.webp", alt: "Alpine Meadow wallpaper across a partially open iPhone Duo", label: "Alpine Meadow · Partially open", view: "Partially open" },
+    "downloadSummary": [
+      {
+        "label": "Files",
+        "value": "6 landscape PNG wallpapers"
+      },
+      {
+        "label": "Resolution",
+        "value": "1494–1495 × 1052 px, depending on the design"
+      },
+      {
+        "label": "Layout",
+        "value": "One continuous landscape per design for the closed and open displays"
+      }
     ],
-    description: [
-      "Four mountain landscapes, from violet valleys and cloud-covered peaks to sunlit meadows and Fuji at dusk.",
-      "Each design is one continuous landscape image with its subject kept visible in a central portrait crop. Save the image to Photos and choose Use as Wallpaper, then adjust the framing to your preference.",
-      "Images are supplied at their original crop resolution. These are not 4K files. Device mockups illustrate the compositions; your wallpaper framing can vary with iOS settings and orientation.",
+    "previewNote": "The gallery shows each wallpaper on the closed and fully open Duo. Framing may vary with your wallpaper settings.",
+    "description": [
+      "Six mountain landscapes follow the changing light from copper desert cliffs to a snow peak beneath the stars. Vermilion and rose catch the ridges, while violet mist and deep blue skies give the collection its quieter scenes.",
+      "The closed Duo frames the main summit beneath the clock. Open it to see the surrounding ridges, valleys, and reflections extend across the wider display."
     ],
-    included: [
-      "4 landscape JPEG wallpapers",
-      "Violet Valley, Cloud Peaks, Alpine Meadow, and Fuji at Dusk",
-      "One image per design for both display shapes",
-      "Simple wallpaper setup instructions",
+    "designsHeading": "Explore the six landscapes",
+    "designs": [
+      {
+        "title": "Vermilion Ridge",
+        "description": "A scarlet ridge cuts across a muted teal sky. The sunlit face glows against the deep shadow on the opposite slope."
+      },
+      {
+        "title": "Last Light",
+        "description": "A thin line of copper sunlight traces the serrated snow peaks. The low ridge leaves a wide stretch of deep blue above it."
+      },
+      {
+        "title": "Violet Hour",
+        "description": "An angular summit stands against a magenta horizon. Violet mist settles between the ridges and softens the foreground."
+      },
+      {
+        "title": "Rose Cirrus",
+        "description": "Peach cirrus streams above a blue snow peak. Low cloud threads through the valleys between darker ridges."
+      },
+      {
+        "title": "Starlit Basin",
+        "description": "A broad snow peak with dark bands of rock rises between shadowed slopes. Small ripples catch its reflection beneath a quiet star field."
+      },
+      {
+        "title": "Copper Monolith",
+        "description": "Late sunlight picks out the vertical grooves of a sandstone tower. Wind-rippled sand leads toward the rock, with scattered clouds against a cool blue sky."
+      }
     ],
-    imageColors: ["#1b2838", "#2c3e50", "#34495e", "#4a6572"],
-    gradientStyle: "layers",
+    "included": [
+      "Six AI-recreated landscape PNG wallpapers",
+      "One clean artwork per design for both display shapes"
+    ],
+    "imageColors": [
+      "#17223e",
+      "#2b727c",
+      "#be3936",
+      "#e78e60"
+    ],
+    "gradientStyle": "layers"
   },
   {
     "id": "ps-36",
@@ -587,6 +692,261 @@ export const PRODUCTS: Product[] = [
       "#66833f",
       "#e8b987",
       "#acc3b5"
+    ],
+    "gradientStyle": "layers"
+  },
+  {
+    "id": "ps-38",
+    "slug": "dial-studies-iphone-duo",
+    "title": "Dial Studies for iPhone Duo",
+    "price": 900,
+    "isFeatured": true,
+    "creator": "Moraine Studio",
+    "summary": "Six Rolex dial-inspired designs, from luminous pearl and brushed florals to colourful bubbles.",
+    "designsHeading": "Six expressions of the dial",
+    "gallery": [
+      {
+        "src": "/wallpapers/duo-dial-studies/blue-floral-closed.webp",
+        "alt": "Blue Floral wallpaper on a closed Night Sky iPhone Duo, with clock and controls",
+        "label": "Blue Floral · Closed",
+        "view": "Closed"
+      },
+      {
+        "src": "/wallpapers/duo-dial-studies/blue-floral-open.webp",
+        "alt": "Blue Floral wallpaper on a fully open Night Sky iPhone Duo, with clock and controls",
+        "label": "Blue Floral · Fully open",
+        "view": "Fully open"
+      },
+      {
+        "src": "/wallpapers/duo-dial-studies/meteorite-silver-closed.webp",
+        "alt": "Meteorite Silver wallpaper on a closed Night Sky iPhone Duo, with clock and controls",
+        "label": "Meteorite Silver · Closed",
+        "view": "Closed"
+      },
+      {
+        "src": "/wallpapers/duo-dial-studies/meteorite-silver-open.webp",
+        "alt": "Meteorite Silver wallpaper on a fully open Night Sky iPhone Duo, with clock and controls",
+        "label": "Meteorite Silver · Fully open",
+        "view": "Fully open"
+      },
+      {
+        "src": "/wallpapers/duo-dial-studies/mother-of-pearl-closed.webp",
+        "alt": "Mother of Pearl wallpaper on a closed Star White iPhone Duo, with clock and controls",
+        "label": "Mother of Pearl · Closed",
+        "view": "Closed"
+      },
+      {
+        "src": "/wallpapers/duo-dial-studies/mother-of-pearl-open.webp",
+        "alt": "Mother of Pearl wallpaper on a fully open Star White iPhone Duo, with clock and controls",
+        "label": "Mother of Pearl · Fully open",
+        "view": "Fully open"
+      },
+      {
+        "src": "/wallpapers/duo-dial-studies/olive-floral-closed.webp",
+        "alt": "Olive Floral wallpaper on a closed Night Sky iPhone Duo, with clock and controls",
+        "label": "Olive Floral · Closed",
+        "view": "Closed"
+      },
+      {
+        "src": "/wallpapers/duo-dial-studies/olive-floral-open.webp",
+        "alt": "Olive Floral wallpaper on a fully open Night Sky iPhone Duo, with clock and controls",
+        "label": "Olive Floral · Fully open",
+        "view": "Fully open"
+      },
+      {
+        "src": "/wallpapers/duo-dial-studies/palm-champagne-closed.webp",
+        "alt": "Palm Champagne wallpaper on a closed Star White iPhone Duo, with clock and controls",
+        "label": "Palm Champagne · Closed",
+        "view": "Closed"
+      },
+      {
+        "src": "/wallpapers/duo-dial-studies/palm-champagne-open.webp",
+        "alt": "Palm Champagne wallpaper on a fully open Star White iPhone Duo, with clock and controls",
+        "label": "Palm Champagne · Fully open",
+        "view": "Fully open"
+      },
+      {
+        "src": "/wallpapers/duo-dial-studies/celebrations-closed.webp",
+        "alt": "Celebrations wallpaper on a closed Star White iPhone Duo, with clock and controls",
+        "label": "Celebrations · Closed",
+        "view": "Closed"
+      },
+      {
+        "src": "/wallpapers/duo-dial-studies/celebrations-open.webp",
+        "alt": "Celebrations wallpaper on a fully open Star White iPhone Duo, with clock and controls",
+        "label": "Celebrations · Fully open",
+        "view": "Fully open"
+      }
+    ],
+    "downloadSummary": [
+      {
+        "label": "Files",
+        "value": "6 landscape artworks: 4 JPG and 2 PNG"
+      },
+      {
+        "label": "Dimensions",
+        "value": "4096 × 2882 px per artwork"
+      },
+      {
+        "label": "Layout",
+        "value": "One continuous composition per design for open and closed displays"
+      },
+      {
+        "label": "Detail",
+        "value": "Blue Floral and Celebrations are upscaled from 1495 × 1052 px"
+      }
+    ],
+    "previewNote": "Phone frames, time, and controls appear only in the previews. Framing varies with wallpaper settings. A darker clock colour pairs well with the lighter designs.",
+    "description": [
+      "The character of a watch dial, reimagined across a wider canvas. Inspired by Rolex dials, Dial Studies brings together crystalline silver, luminous pearl, metallic florals, champagne palm leaves, and a bright gathering of coloured bubbles. Six distinct surfaces, each with its own way of catching the eye.",
+      "The patterns fill the closed screen and continue across the open display. Blue Floral, Meteorite Silver, and Olive Floral are shown on Night Sky; Mother of Pearl, Palm Champagne, and Celebrations are paired with Star White. Choose quiet texture, rich colour, or something more playful.",
+      "An independent, AI-created wallpaper collection by Moraine Studio, inspired by Rolex dial aesthetics. Not affiliated with or endorsed by Rolex."
+    ],
+    "designs": [
+      {
+        "title": "Blue Floral",
+        "description": "Brushed blue petals overlap like engraved metal, moving from steel to midnight. Small jewel-like centres bring a precise glint to the soft floral pattern."
+      },
+      {
+        "title": "Meteorite Silver",
+        "description": "Crisscrossing silver striations form a fractured, crystalline surface. Pale highlights and graphite shadows give this monochrome design its depth."
+      },
+      {
+        "title": "Mother of Pearl",
+        "description": "Clouds of ivory carry hints of rose, lilac, and sea green. The pearlescent texture feels soft and luminous, with new colour appearing across the wider display."
+      },
+      {
+        "title": "Olive Floral",
+        "description": "Layered olive and forest-green petals combine fine grain with smooth metallic shading. Bright, jewel-like centres punctuate the repeating pattern."
+      },
+      {
+        "title": "Palm Champagne",
+        "description": "Sweeping palm fronds cross a warm champagne ground. Satin gold tones and crisp leaf edges bring an understated tropical rhythm to the screen."
+      },
+      {
+        "title": "Celebrations",
+        "description": "Tangerine, pink, yellow, and deep green bubbles gather beneath an airy turquoise field. Bold black outlines make the colours feel playful and graphic, with more of the gathering revealed when unfolded."
+      }
+    ],
+    "included": [
+      "Six wallpaper artworks at 4096 × 2882 px",
+      "Blue Floral, Meteorite Silver, Mother of Pearl, Olive Floral, Palm Champagne, and Celebrations",
+      "One clean landscape artwork per design; no clock, controls, or phone frame",
+      "Blue Floral and Celebrations are interpolated upscales; export dimensions do not represent native 4K detail"
+    ],
+    "imageColors": [
+      "#243c56",
+      "#566633",
+      "#d2b98b",
+      "#9ae9e4"
+    ],
+    "gradientStyle": "layers"
+  },
+  {
+    "id": "ps-39",
+    "slug": "prismatic-glass-iphone-duo",
+    "title": "Prismatic Glass for iPhone Duo",
+    "price": 900,
+    "isFeatured": true,
+    "creator": "Moraine Studio",
+    "summary": "Four wallpapers shaped by the way light bends through glass.",
+    "description": [
+      "Prismatic Glass studies four ways light moves through glass. Opalescent lenses split white light into colour, amber and cyan run along a dark seam, and broad folds range from vivid orange to cool blue.",
+      "The closed display frames the central reflection. Open the phone to see each pattern continue across the wider screen."
+    ],
+    "designsHeading": "Explore the glass studies",
+    "designs": [
+      {
+        "title": "Opal Lenses",
+        "description": "Slanted glass lenses catch pools of opalescent colour against a dark ground. The central lens stays in view when the phone is closed, while the pattern continues across the open screen."
+      },
+      {
+        "title": "Aurora Current",
+        "description": "Cyan and gold reflections follow a sweeping curve through dark glass. Tiny bubbles sit along the bright seam beneath the clock."
+      },
+      {
+        "title": "Solar Fold",
+        "description": "Orange and electric blue meet along glossy folds. The brightest band crosses the centre, then widens into pools of colour as the phone opens."
+      },
+      {
+        "title": "Glacier Silk",
+        "description": "Icy blue glass ripples in soft folds with silver highlights. The central curl carries the composition on the closed screen."
+      }
+    ],
+    "gallery": [
+      {
+        "src": "/wallpapers/duo-prismatic-glass/opal-lenses-closed.webp",
+        "alt": "Opal Lenses on a closed Night Sky iPhone Duo",
+        "label": "Opal Lenses · Closed",
+        "view": "Closed"
+      },
+      {
+        "src": "/wallpapers/duo-prismatic-glass/opal-lenses-open.webp",
+        "alt": "Opal Lenses on a fully open Night Sky iPhone Duo",
+        "label": "Opal Lenses · Fully open",
+        "view": "Fully open"
+      },
+      {
+        "src": "/wallpapers/duo-prismatic-glass/aurora-current-closed.webp",
+        "alt": "Aurora Current on a closed Night Sky iPhone Duo",
+        "label": "Aurora Current · Closed",
+        "view": "Closed"
+      },
+      {
+        "src": "/wallpapers/duo-prismatic-glass/aurora-current-open.webp",
+        "alt": "Aurora Current on a fully open Night Sky iPhone Duo",
+        "label": "Aurora Current · Fully open",
+        "view": "Fully open"
+      },
+      {
+        "src": "/wallpapers/duo-prismatic-glass/solar-fold-closed.webp",
+        "alt": "Solar Fold on a closed Night Sky iPhone Duo",
+        "label": "Solar Fold · Closed",
+        "view": "Closed"
+      },
+      {
+        "src": "/wallpapers/duo-prismatic-glass/solar-fold-open.webp",
+        "alt": "Solar Fold on a fully open Night Sky iPhone Duo",
+        "label": "Solar Fold · Fully open",
+        "view": "Fully open"
+      },
+      {
+        "src": "/wallpapers/duo-prismatic-glass/glacier-silk-closed.webp",
+        "alt": "Glacier Silk on a closed Star White iPhone Duo",
+        "label": "Glacier Silk · Closed",
+        "view": "Closed"
+      },
+      {
+        "src": "/wallpapers/duo-prismatic-glass/glacier-silk-open.webp",
+        "alt": "Glacier Silk on a fully open Star White iPhone Duo",
+        "label": "Glacier Silk · Fully open",
+        "view": "Fully open"
+      }
+    ],
+    "downloadSummary": [
+      {
+        "label": "Files",
+        "value": "4 landscape PNG wallpapers"
+      },
+      {
+        "label": "Dimensions",
+        "value": "1495 × 1052 or 1496 × 1051 px, depending on the design"
+      },
+      {
+        "label": "Layout",
+        "value": "One continuous composition per design for both displays"
+      }
+    ],
+    "previewNote": "The gallery shows each wallpaper on the closed and fully open Duo. The artwork files contain only the glass composition.",
+    "included": [
+      "Four AI-created landscape PNG wallpapers",
+      "Opal Lenses, Aurora Current, Solar Fold, and Glacier Silk"
+    ],
+    "imageColors": [
+      "#101c31",
+      "#4589d0",
+      "#ef8a2a",
+      "#94cee6"
     ],
     "gradientStyle": "layers"
   },

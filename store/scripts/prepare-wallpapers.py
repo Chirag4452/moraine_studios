@@ -1,7 +1,7 @@
-"""Prepare local wallpaper assets; no AI edits and no changes to raw originals.
+"""Legacy import/export helper; does not perform the required AI enhancement.
 
 Run with Python + Pillow. Source: ../wallpaper(raw).
-Masters retain native crop resolution. Enlarged PSD inputs are preview assets only.
+Preserves composition and existing masters. Renderer creates working previews.
 """
 from pathlib import Path
 import json
@@ -15,32 +15,36 @@ SPECS = {
     '5D26EA72-6DCC-422A-81B3-290E0C5B613D': ('cloud-peaks', 'Cloud Peaks', .53),
     '825C8AD7-2E85-4D81-9CDE-702AB6BEAF5A': ('alpine-meadow', 'Alpine Meadow', .50),
     'B371369A-8B85-4CA4-B855-A5CDCF514030_1_105_c': ('fuji-at-dusk', 'Fuji at Dusk', .66),
+    'matterhorn': ('matterhorn', 'Matterhorn', .54),
+    'kirkjufell-aurora': ('kirkjufell-aurora', 'Kirkjufell Aurora', .29),
+    'mount-cook': ('mount-cook', 'Mount Cook', .49),
+    'mountain-scenery': ('mountain-scenery', 'Mountain Scenery', .56),
+    'mount-kailash': ('mount-kailash', 'Mount Kailash', .43),
+    'mount-fuji-sunrise-4k': ('mount-fuji-sunrise', 'Mount Fuji Sunrise', .73),
 }
 OUT.mkdir(exist_ok=True)
 rows = []
+manifest_path = OUT/'manifest.json'
+previous_manifest = json.loads(manifest_path.read_text()) if manifest_path.exists() else []
 manifest = []
 for path in sorted(SOURCE.iterdir()):
-    if path.stem not in SPECS:
+    if path.stem not in SPECS or path.suffix.lower() not in {'.jpg', '.jpeg', '.png', '.webp'}:
         continue
     slug, title, focus_y = SPECS[path.stem]
     dest = OUT / slug
     dest.mkdir(exist_ok=True)
     image = ImageOps.exif_transpose(Image.open(path)).convert('RGB')
     w, h = image.size
-    ratio = 2670 / 1878
-    cw, ch = (w, round(w / ratio)) if w / h < ratio else (round(h * ratio), h)
-    left = (w-cw)//2
-    top = max(0, min(h-ch, round(h*focus_y-ch/2)))
-    master = image.crop((left, top, left+cw, top+ch))
-    master.save(dest/'master.jpg', quality=95, subsampling=0)
+    if (dest/'master.jpg').exists():
+        master = Image.open(dest/'master.jpg').convert('RGB')
+    else:
+        master = image.copy()
+        master.save(dest/'master.jpg', quality=98, subsampling=0)
+    cw, ch = master.size
+    left, top = 0, 0
     # Central portrait window from the SAME master, never a separate composition.
     outer_w = round(ch*1398/2034)
     outer = master.crop(((cw-outer_w)//2, 0, (cw-outer_w)//2+outer_w, ch))
-    master.resize((2670,1878), Image.Resampling.LANCZOS).save(dest/'mockup-inner.jpg', quality=93)
-    outer.resize((1398,2034), Image.Resampling.LANCZOS).save(dest/'mockup-outer.jpg', quality=93)
-    web = master.copy()
-    web.thumbnail((1200,1200), Image.Resampling.LANCZOS)
-    web.save(dest/'preview.webp', quality=85)
     tile = Image.new('RGB', (1400, 520), '#f0efeb')
     draw = ImageDraw.Draw(tile)
     draw.text((24,16), f'{title} | original {w} x {h} | master {cw} x {ch}', fill='#20242a')
@@ -57,33 +61,17 @@ for path in sorted(SOURCE.iterdir()):
     manifest.append({'slug':slug,'title':title,'source':str(path.relative_to(ROOT)),
                      'originalSize':[w,h],'masterSize':list(master.size),
                      'cropBox':[left,top,left+cw,top+ch],
-                     'download':'master.jpg','webPreview':'preview.webp',
-                     'mockupInputs':['mockup-outer.jpg','mockup-inner.jpg'],
-                     'note':'Mockup inputs are enlarged for PSD placement; master retains native crop resolution.'})
+                     'download':'master.jpg',
+                     'mockupInputs':['master.jpg'],
+                     'note': ('AI recreation generated at 941 x 1672 and upscaled to 2160 x 3840 before cropping; not native 4K detail. '
+                              if slug == 'mount-fuji-sunrise' else '') +
+                            'Renderer reads the master and creates temporary working previews.'})
 sheet = Image.new('RGB',(1400,520*len(rows)), '#f0efeb')
 for i,row in enumerate(rows): sheet.paste(row,(0,i*520))
 sheet.save(OUT/'crop-review.jpg',quality=90)
-(OUT/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
-(OUT/'README.md').write_text('''# Wallpaper assets
-
-Source of truth: `../wallpaper(raw)/`. Raw files are never overwritten.
-
-Each design includes:
-- `master.jpg`: landscape crop at native resolution, one image for the wallpaper.
-- `preview.webp`: compressed web preview.
-- `mockup-inner.jpg`: enlarged landscape artwork for the foldable PSD screen.
-- `mockup-outer.jpg`: central portrait crop of that same artwork for the handheld PSD.
-
-Mockup inputs are presentation assets, not separate customer wallpapers. Enlarging
-them does not create additional detail. These originals are below native Duo
-resolution; avoid describing the pack as 4K or native-resolution quality.
-
-`crop-review.jpg` shows original, open crop, and central closed crop for each design.
-`manifest.json` records sources and crop boxes for repeatable exports.
-
-For the first site version, use the handheld PSD as the cover image and the
-partially open PSD as the second gallery image. Replace `PUT YOUR SCREEN HERE`
-using the matching mockup input, remove sample text, retain device/hand/highlights,
-and export flattened web images. Keep PSD source files outside public assets.
-''')
+# Preserve AI-prepared designs and their provenance outside the legacy import list.
+updated_slugs = {entry['slug'] for entry in manifest}
+manifest.extend(entry for entry in previous_manifest if entry['slug'] not in updated_slugs)
+manifest_path.write_text(json.dumps(manifest,indent=2)+'\n')
+(OUT/'README.md').write_text('# Wallpaper assets\n\nPreserve raw originals in `../wallpaper(raw)/`.\nEach design folder retains one high-quality `master.jpg` only.\nThe renderer reads the master and creates temporary previews and device crops.\nDo not retain separate preview, inner, or outer artwork files.\n\nProcessing defaults to AI recreation or enhancement; the legacy preparation\nscript only imports/exports files and does not perform AI enhancement.\nExisting masters are preserved by that helper, including legacy landscape crops.\nConsult the root AGENTS.md for composition and review requirements.\nThe manifest records sources and dimensions. Upscaling does not add native detail.\n')
 print(json.dumps(manifest,indent=2))
